@@ -1,0 +1,24 @@
+# ===== data =====
+*.npz
+*.mtx
+*.mtx.gz
+*.tsv
+*.tsv.gz
+*.mat
+
+# ===== figures / results =====
+*.png
+*.jpg
+*.svg
+*.pdf
+
+# ===== notebooks cache =====
+.ipynb_checkpoints/
+
+# ===== python =====
+__pycache__/
+*.pyc
+
+# ===== temp =====
+*.log
+*.tmp
