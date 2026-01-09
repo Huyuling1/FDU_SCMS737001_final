@@ -76,7 +76,7 @@ def extract_maze_by_darkness(image_path, grid_rows=49, grid_cols=65):
 
     return maze_matrix, start_pos
 
-def visualize_final_check(matrix, start_pos):
+def visualize_check(matrix, start_pos):
     plt.figure(figsize=(12, 10))
     # 0=黑(路), 1=白(墙)
     plt.imshow(matrix, cmap='gray', origin='upper')
@@ -94,6 +94,6 @@ def visualize_final_check(matrix, start_pos):
 maze_grid, start_pos = extract_maze_by_darkness('maze.jpg', grid_rows=49, grid_cols=65)
 
 print(f"起点坐标: {start_pos}")
-visualize_final_check(maze_grid, start_pos)
+visualize_check(maze_grid, start_pos)
 
 np.savez('maze_data.npz', grid=maze_grid, start=start_pos)
