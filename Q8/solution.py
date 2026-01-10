@@ -253,10 +253,6 @@ def visualize_solution(env, path, filename='maze_solution.png'):
     plt.figure(figsize=(10, 10))
     cmap = matplotlib.colors.ListedColormap(['black', 'white'])
     plt.imshow(env.grid, cmap=cmap, origin='upper')
-    
-    if env.dead_ends:
-        dead_y, dead_x = zip(*env.dead_ends)
-        plt.scatter(dead_x, dead_y, c='orange', s=20, marker='s', alpha=0.4, label='Dead Ends (-50)')
 
     if len(path) > 1:
         path_y, path_x = zip(*path)
@@ -271,7 +267,6 @@ def visualize_solution(env, path, filename='maze_solution.png'):
     plt.scatter(sx, sy, c='lime', s=100, marker='o', label='Start', edgecolors='black')
     
     plt.legend(loc='upper right')
-    plt.title(f"Solution with Revisit Penalty (-10)\nLength: {len(path)-1}", fontsize=14)
     plt.axis('off')
     plt.savefig(filename, bbox_inches='tight')
     plt.close()

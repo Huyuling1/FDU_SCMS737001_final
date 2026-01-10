@@ -73,10 +73,10 @@ def main():
     # --- 测试集评估 ---
     y_pred = best_model.predict(X_test)
 
-    # 计算逐个样本的平方相对误差
-    sample_errors = ((y_test - y_pred) / y_test) ** 2
+    relative_sample_errors = ((y_test - y_pred) / y_test) ** 2
+    sample_errors = abs(y_test - y_pred)
 
-    total_sre = np.sum(sample_errors)
+    total_sre = np.sum(relative_sample_errors)
     mean_sre = np.mean(sample_errors)
     var_sre = np.var(sample_errors)
 
